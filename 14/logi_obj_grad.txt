@@ -1,0 +1,18 @@
+
+对于单个样本 $\mathbf{X_{k,:}}$的损失函数可以写作:<br>
+
+\begin{equation}
+J_k(\mathbf{w_k})  = ||\frac{1}{1 - e^{-\mathbf{g_k}}} - \mathbf{y_k}||^2_2\\
+\quad\\
+\mathbf{g_k} = \sigma(\mathbf{w_k} \cdot \mathbf{X_{k,:}}) \\
+\mathbf{y_k} \in \{0, 1\}
+\end{equation} <br><br><br>
+
+
+
+单个样本 $\mathbf{X_{k,:}}$的损失函数的微分:
+
+\begin{align}
+\frac{\mathrm{d} }{\mathrm{d} \mathbf{w_k}} J_k(\mathbf{w_k}) & = 2 (\mathbf{g_k} - \mathbf{y_k}) * \mathbf{g_k} * (1 - \mathbf{g_k})  \\
+& = 2 \big(\sigma(\mathbf{w_k} \cdot \mathbf{X_{k,:}}) - \mathbf{y_k}\big) \cdot \mathbf{X_{k,:}}\\
+\end{align} <br><br>
